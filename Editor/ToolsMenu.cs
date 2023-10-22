@@ -21,14 +21,18 @@ namespace Frttpc.Tools
             Refresh();
         }
 
-        //Manifests
+        #region Manifest
+
         [MenuItem("Tools/Setup/Manifest/3D")]
         public static async void LoadNew3DManifest() => await Packages.ReplacePackageFromGist("10652b99bf6fdd570ccf66358acc60c6");
 
         [MenuItem("Tools/Setup/Manifest/2D")]
         public static async void LoadNew2DManifest() => await Packages.ReplacePackageFromGist("7ca5d6820d302e3fb4f8bcb440c9ac9d");
 
-        //Packages
+        #endregion
+
+        #region Packages
+
         [MenuItem("Tools/Setup/Packages/New Input System")]
         public static void AddNewInputSystem() => Packages.InstallUnityPackage("inputsystem");
 
@@ -41,6 +45,8 @@ namespace Frttpc.Tools
         [MenuItem("Tools/Setup/Packages/Cinemachine")]
         public static void AddCinemachine() => Packages.InstallUnityPackage("cinemachine");
 
+        #region Multiplayer Packages
+
         [MenuItem("Tools/Setup/Packages/Multiplayer/Netcode")]
         public static void AddNetcodeForGameObjects() => Packages.InstallUnityPackage("netcode.gameobjects");
 
@@ -50,6 +56,7 @@ namespace Frttpc.Tools
         [MenuItem("Tools/Setup/Packages/Multiplayer/ParrelSync")]
         public static void AddParrelSync() => Client.Add("https://github.com/VeriorPies/ParrelSync.git?path=/ParrelSync");
 
-
+        #endregion
+        #endregion
     }
 }
