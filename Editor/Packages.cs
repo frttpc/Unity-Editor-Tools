@@ -2,6 +2,7 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.IO;
+using System;
 using static System.IO.Path;
 using static UnityEngine.Application;
 
@@ -36,7 +37,9 @@ namespace Frttpc.Tools
 
         public static void InstallUnityPackage(string packageName)
         {
-            Client.Add($"com.unity.{packageName}");
+            string package = $"com.unity.{packageName}";
+            Client.Add(package);
+            Console.WriteLine("Installed: " + package);
         }
     }
 }
